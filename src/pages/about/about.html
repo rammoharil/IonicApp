@@ -1,11 +1,21 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      About
+      Add New User
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-
+<ion-item>
+  <ion-label>First Name</ion-label>
+  <ion-input type="text" [(ngModel)]="firstName" name="First Name"></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label>Last Name</ion-label>
+  <ion-input type="text" [(ngModel)]="lastName" name="Last Name"></ion-input>
+</ion-item>
+<ion-item>
+  <button ion-button (click)="SubmitData()">Submit</button>
+</ion-item>
 </ion-content>
