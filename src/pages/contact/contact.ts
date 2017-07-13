@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController,Platform } from 'ionic-angular';
 import {SQLite} from 'ionic-native';
 
 @Component({
@@ -8,8 +8,10 @@ import {SQLite} from 'ionic-native';
 })
 export class ContactPage {
 people:any;
-  constructor(public navCtrl: NavController) {
-    this.refresh();
+  constructor(public navCtrl: NavController,platform: Platform) {
+    platform.ready().then(() => {
+            this.refresh();
+        });
   }
 
   public refresh() {
